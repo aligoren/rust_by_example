@@ -5,3 +5,4 @@
 - [Data Types](/data_types)
 - [Functions](/functions)
 - [Comments](/comments)
+- [Control Flow](/control_flow)
