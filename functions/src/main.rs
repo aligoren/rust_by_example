@@ -19,9 +19,19 @@ fn sum_two_value(number_one: i32, number_two: i32) -> i32 {
     number_one + 1 + number_two //don't use semi-colon
 }
 
+fn print_something() {
+    println!("Hello world!");
+}
+
+fn user(age: u8, name: String) {
+    println!("I'm {} years old. My name is {}", age, name);
+}
+
 fn main() {
     hello_world();
     user_info(String::from("Ali"), 27, true);
     println!("Is age verified: {}", verify_age(21));
     println!("Total: {}", sum_two_value(1, 2));
+    print_something();
+    user(27, "Ali".to_string());
 }
