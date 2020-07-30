@@ -6,3 +6,4 @@
 - [Functions](/functions)
 - [Comments](/comments)
 - [Control Flow](/control_flow)
+- [Understanding Ownership](/understanding_ownership)
