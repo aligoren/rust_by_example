@@ -11,14 +11,16 @@ fn main() {
     // there is no error. because these are primitive types.
 
     //heap allocated variable
-    let heap_allocated_x = Box::new(10);
+    let mut heap_allocated_x = Box::new(10);
 
     let heap_allocated_y = heap_allocated_x;
 
     // won't work. because x's ownership moved to y
     //println!("X {} and Y {}", heap_allocated_x, heap_allocated_y);
 
-    box_example(heap_allocated_y);
+    heap_allocated_x = box_example(heap_allocated_y);
+
+    println!("X {}", heap_allocated_x);
 
     // won't work. because ownership is moved to the function
     // println!("Y {}", heap_allocated_y);
@@ -26,6 +28,8 @@ fn main() {
 }
 
 
-fn box_example(n: Box<u8>) {
+fn box_example(n: Box<u8>) -> Box<u8> {
     println!("N {}", n);
+
+    n
 }
