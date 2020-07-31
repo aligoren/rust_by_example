@@ -1,43 +1,31 @@
 fn main() {
-    // Variable scope
-    let mut s = "hello";
+    
+    // stack allocated integer variable
+    let stack_allocated_x = 10;
 
-    println!("Hi {}", s);
+    // copying variable x to y. not moving.
+    let stack_allocated_y = stack_allocated_x;
 
-    {
-        let s = "hello world!";
-    }
+    println!("X {} and Y {}", stack_allocated_x, stack_allocated_y);
 
-    println!("S variable again {}", s);
+    // there is no error. because these are primitive types.
 
-    // string type
-    let mut name_surname = String::from("Ali");
+    //heap allocated variable
+    let heap_allocated_x = Box::new(10);
 
-    // ups I forget my surname. Let me add
+    let heap_allocated_y = heap_allocated_x;
 
-    name_surname.push_str(" GÖREN");
+    // won't work. because x's ownership moved to y
+    //println!("X {} and Y {}", heap_allocated_x, heap_allocated_y);
 
-    println!("Now my friends can identify me. I'm {}", name_surname);
+    box_example(heap_allocated_y);
 
-    let message = String::from("hello");
-
-    // these lines will throw an error
-    // let message2 = message;
-    // println!("Hello {}", message);
-
-    let message2 = message.clone();
-    println!("message = {} and message2 = {}" ,message, message2);
-
-    let mut username = String::from("Ali");
-
-    username = set_username(username);
-
-    println!("You passed {}", username); // it won't show error. because we gave back ownership
+    // won't work. because ownership is moved to the function
+    // println!("Y {}", heap_allocated_y);
 
 }
 
-// set your username
-fn set_username(name: String) -> String {
-    println!("Username: {}", name);
-    name
+
+fn box_example(n: Box<u8>) {
+    println!("N {}", n);
 }
