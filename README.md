@@ -8,4 +8,4 @@
 - [Control Flow](/control_flow)
 - [Understanding Ownership](/understanding_ownership)
 - [References and Borrowing](/references_and_borrowing)
-- [Defining and Instantiating Structs ](/defining_and_instantiating_structs)
+- [Defining and Instantiating Structs](/defining_and_instantiating_structs)
