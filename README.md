@@ -9,3 +9,4 @@
 - [Understanding Ownership](/understanding_ownership)
 - [References and Borrowing](/references_and_borrowing)
 - [Defining and Instantiating Structs](/defining_and_instantiating_structs)
+- [Struct Method Syntax](/struct_method_syntax)
